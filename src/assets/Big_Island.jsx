@@ -6,7 +6,7 @@ Command: npx gltfjsx@6.1.4 public/models/Big_Island.glb --transform -R 3072
 import React, { useRef } from 'react'
 import { Float, useGLTF, Sparkles, Environment, Stars } from '@react-three/drei'
 import Clouds from './Clouds2'
-/* import { Grass } from './Grass' */
+import { Grass } from './Grass'
 import * as THREE from 'three'
 
 export default function BigIsland(props) {

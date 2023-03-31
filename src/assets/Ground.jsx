@@ -5,14 +5,25 @@ Command: npx gltfjsx@6.1.4 public/models/Ground.glb --transform
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { Grass } from './Grass'
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF('models/Ground-transformed.glb')
+export default function Ground(props) {
+  const { nodes, materials } = useGLTF(
+    'https://hauntedhouse2023.netlify.app/models/Ground-transformed.glb'
+  )
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Ground_Baked001.geometry} material={materials.Material} scale={1.25} />
+      <Grass>
+        <mesh
+          geometry={nodes.Ground_Baked001.geometry}
+          material={materials.Material}
+          scale={1.25}
+        />
+      </Grass>
     </group>
   )
 }
 
-useGLTF.preload('models/Ground-transformed.glb')
+useGLTF.preload(
+  'https://hauntedhouse2023.netlify.app/models/Ground-transformed.glb'
+)

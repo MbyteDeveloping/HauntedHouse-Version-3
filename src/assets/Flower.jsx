@@ -4,7 +4,7 @@ import { useGLTF, useTexture } from '@react-three/drei'
 import { LayerMaterial, Texture } from 'lamina'
 
 export const Flower = forwardRef((props, ref) => {
-  const { nodes, materials } = useGLTF('/models/flower2.glb')
+  const { nodes, materials } = useGLTF('https://hauntedhouse2023.netlify.app/models/flower2.glb')
   materials.green.envMapIntensity = 4
   return (
     <group>
@@ -14,4 +14,4 @@ export const Flower = forwardRef((props, ref) => {
   )
 })
 
-useGLTF.preload('/models/flower2.glb')
+useGLTF.preload('https://hauntedhouse2023.netlify.app/models/flower2.glb')
