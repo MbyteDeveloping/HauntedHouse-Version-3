@@ -10,7 +10,7 @@ import { Float, useGLTF, Sparkles, Environment, Stars } from '@react-three/drei'
 import * as THREE from 'three'
 
 export default function BigIsland(props) {
-  const { nodes, materials } = useGLTF('models/Big_Island-transformed.glb')
+  const { nodes, materials } = useGLTF('https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb')
 
   materials.Ground_Baked.envMapIntensity = 0.5
   materials.House_Baked.envMapIntensity = 0.2
@@ -60,4 +60,4 @@ export default function BigIsland(props) {
   )
 }
 
-useGLTF.preload('models/Big_Island-transformed.glb')
+useGLTF.preload('https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb')

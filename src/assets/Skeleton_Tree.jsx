@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 export default function SkeletonTree(props) {
   const skeleton = useRef()
-  const { nodes, materials } = useGLTF('models/Skeleton_Tree-transformed.glb')
+  const { nodes, materials } = useGLTF('https://master--clinquant-malabi-6020aa.netlify.app/models/Skeleton_Tree-transformed.glb')
 
   materials.Skeleton_Baked.color = new THREE.Color("black")
 
@@ -24,4 +24,4 @@ export default function SkeletonTree(props) {
   )
 }
 
-useGLTF.preload('models/Skeleton_Tree-transformed.glb')
+useGLTF.preload('https://master--clinquant-malabi-6020aa.netlify.app/models/Skeleton_Tree-transformed.glb')

@@ -8,7 +8,7 @@ import { Float, useGLTF } from '@react-three/drei'
 import Hand from './Hand'
 
 export default function Island(props) {
-  const { nodes, materials } = useGLTF('models/Island-transformed.glb')
+  const { nodes, materials } = useGLTF('https://master--clinquant-malabi-6020aa.netlify.app/models/Island-transformed.glb')
   return (
     <Float>
       <group {...props} dispose={null}>
@@ -22,4 +22,4 @@ export default function Island(props) {
   )
 }
 
-useGLTF.preload('public/models/Island-transformed.glb')
+useGLTF.preload('https://master--clinquant-malabi-6020aa.netlify.app/public/models/Island-transformed.glb')
