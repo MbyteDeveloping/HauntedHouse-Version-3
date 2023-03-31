@@ -5,26 +5,26 @@ Command: npx gltfjsx@6.1.4 public/models/Big_Island.glb --transform -R 3072
 
 import React, { useRef } from 'react'
 import { Float, useGLTF, Sparkles, Environment, Stars } from '@react-three/drei'
-/* import Clouds from './Clouds2' */
+import Clouds from './Clouds2'
 /* import { Grass } from './Grass' */
 import * as THREE from 'three'
 
 export default function BigIsland(props) {
-  const { nodes, materials } = useGLTF('https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb')
+  const { nodes, materials } = useGLTF(
+    'https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb'
+  )
 
   materials.Ground_Baked.envMapIntensity = 0.5
   materials.House_Baked.envMapIntensity = 0.2
   materials.DarkMetal.envMapIntensity = 2
   materials.DarkMetal.roughness = 0.2
-  materials.DarkMetal.color = new THREE.Color("#282e47")
-
+  materials.DarkMetal.color = new THREE.Color('#282e47')
 
   return (
     <Float rotationIntensity={0.2}>
       <group {...props} dispose={null}>
         <group scale={1.25}>
-
-{/*           <Grass>
+          {/*           <Grass>
             <mesh geometry={nodes.Ground002.geometry} />
           </Grass> */}
           <mesh
@@ -49,15 +49,24 @@ export default function BigIsland(props) {
           />
         </group>
         {/* <Environment preset='night' /> */}
-        <Sparkles position={[-2, 1.5, 4]} count={10} scale={1} size={3} speed={1} />
-        <Sparkles position={[2.3, 1.8, 3.9]} count={14} scale={1} size={2} speed={0.7} />
 
+        <Clouds scale={3} position={[-4, -2, -8]} />
         <Float>
-          <Stars radius={3} depth={10} count={2000} factor={0.2} saturation={1} fade speed={1} />
+          <Stars
+            radius={3}
+            depth={10}
+            count={2000}
+            factor={0.2}
+            saturation={1}
+            fade
+            speed={1}
+          />
         </Float>
       </group>
     </Float>
   )
 }
 
-useGLTF.preload('https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb')
+useGLTF.preload(
+  'https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb'
+)
