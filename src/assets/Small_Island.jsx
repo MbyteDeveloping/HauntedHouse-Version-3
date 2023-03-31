@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 export default function SmallIsland(props) {
-  const { nodes, materials } = useGLTF('models/Small_Island-transformed.glb')
+  const { nodes, materials } = useGLTF('https://hauntedhouse2023.netlify.app/models/Small_Island-transformed.glb')
   return (
     <Float rotationIntensity={1.5} floatIntensity={6}>
       <group {...props} dispose={null}>
@@ -30,4 +30,4 @@ export default function SmallIsland(props) {
   )
 }
 
-useGLTF.preload('models/Small_Island-transformed.glb')
+useGLTF.preload('https://hauntedhouse2023.netlify.app/models/Small_Island-transformed.glb')

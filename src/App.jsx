@@ -6,9 +6,15 @@ import {
   ScrollControls,
   useScroll,
   Sparkles,
-  OrbitControls,
   Environment,
 } from '@react-three/drei'
+import { getProject, val } from '@theatre/core'
+import theatreState from './theatreState.json'
+import studio from '@theatre/studio'
+import extension from '@theatre/r3f/dist/extension'
+import CameraRig from './assets/CameraRig.jsx'
+import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f'
+
 import {
   EffectComposer,
   Bloom,
@@ -25,10 +31,11 @@ import BigIsland from './assets/Big_Island.jsx'
 import SkeletonTree from './assets/Skeleton_Tree.jsx'
 import Island from './assets/Island.jsx'
 import SmallIsland from './assets/Small_Island.jsx'
-import CameraRig from './assets/CameraRig.jsx'
 
 export default function App() {
-
+  const sheet = getProject('Fly Through', { state: theatreState }).sheet(
+    'Scene'
+  )
   return (
     <Canvas
       gl={{
@@ -49,7 +56,6 @@ export default function App() {
           <SkeletonTree />
           <Island />
           <SmallIsland />
-          <OrbitControls />
         </Suspense>
       </CameraRig>
 
@@ -93,8 +99,44 @@ export default function App() {
         />
       </EffectComposer>
       <Environment preset="forest" />
-
-      <OrbitControls />
     </Canvas>
+  )
+}
+
+
+function Scene() {
+  const sheet = useCurrentSheet()
+  const scroll = useScroll()
+
+  // our callback will run on every animation frame
+  useFrame(() => {
+    // the length of our sequence
+    const sequenceLength = val(sheet.sequence.pointer.length)
+    // update the "position" of the playhead in the sequence, as a fraction of its whole length
+    sheet.sequence.position = scroll.offset * sequenceLength
+  })
+
+  const bgColor = '#0b001c'
+
+  return (
+    <>
+      <color attach="background" args={[bgColor]} />
+
+      <directionalLight
+        intensity={0.3}
+        color="orange"
+        position={[-50, -60, -70]}
+      />
+      <pointLight intensity={0.2} color="#62c9f5" position={[20, 9, 50]} />
+
+      <PerspectiveCamera
+        theatreKey="Camera"
+        makeDefault
+        position={[0, 0, 0]}
+        fov={90}
+        near={0.1}
+        far={70}
+      />
+    </>
   )
 }

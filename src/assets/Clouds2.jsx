@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import { Color } from 'three'
 
 export default function Clouds(props) {
-    const cloudTexture = useTexture('cloud.png')
+    const cloudTexture = useTexture('https://hauntedhouse2023.netlify.app/cloud.png')
     const cloud1 = useRef()
     const cloud2 = useRef()
     const cloud3 = useRef()

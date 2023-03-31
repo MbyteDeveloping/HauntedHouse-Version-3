@@ -8,7 +8,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Hand(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('models/Hand-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('https://hauntedhouse2023.netlify.app/models/Hand-transformed.glb')
   const { actions } = useAnimations(animations, group)
   useEffect(() => {
     actions.action1.play()
@@ -32,4 +32,4 @@ export default function Hand(props) {
   )
 }
 
-useGLTF.preload('models/Hand-transformed.glb')
+useGLTF.preload('https://hauntedhouse2023.netlify.app/models/Hand-transformed.glb')
