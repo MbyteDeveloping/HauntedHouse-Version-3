@@ -27,6 +27,7 @@ import SkeletonTree from './assets/Skeleton_Tree.jsx'
 import Island from './assets/Island.jsx'
 import SmallIsland from './assets/Small_Island.jsx'
 import Ground from './assets/Ground'
+import Ground2 from './assets/Ground2.jsx'
 
 export default function App() {
   return (
@@ -50,6 +51,7 @@ export default function App() {
           <Island />
           <SmallIsland />
           <Ground />
+          <Ground2 />
         </Suspense>
       </CameraRig>
 
@@ -76,7 +78,7 @@ export default function App() {
           mipmapBlur
         />
         <Bloom
-          radius={.9}
+          radius={0.9}
           luminanceThreshold={0.9}
           intensity={1.6}
           mipmapBlur
