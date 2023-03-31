@@ -7,17 +7,27 @@ import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 export default function SmallIsland(props) {
-  const { nodes, materials } = useGLTF('https://master--clinquant-malabi-6020aa.netlify.app/models/Small_Island-transformed.glb')
+  const { nodes, materials } = useGLTF('models/Small_Island-transformed.glb')
   return (
     <Float rotationIntensity={1.5} floatIntensity={6}>
       <group {...props} dispose={null}>
-        <group position={[-1.42, -8.63, -5.25]} rotation={[0, -0.73, 0]} scale={0.49}>
-          <mesh geometry={nodes.Vert020.geometry} material={materials['Small_Island_Baked.004']} />
-          <mesh geometry={nodes.Vert020_1.geometry} material={materials['Material.001']} />
+        <group
+          position={[-1.42, -8.63, -5.25]}
+          rotation={[0, -0.73, 0]}
+          scale={0.49}
+        >
+          <mesh
+            geometry={nodes.Vert020.geometry}
+            material={materials['Small_Island_Baked.004']}
+          />
+          <mesh
+            geometry={nodes.Vert020_1.geometry}
+            material={materials['Material.001']}
+          />
         </group>
       </group>
     </Float>
   )
 }
 
-useGLTF.preload('https://master--clinquant-malabi-6020aa.netlify.app/models/Small_Island-transformed.glb')
+useGLTF.preload('models/Small_Island-transformed.glb')

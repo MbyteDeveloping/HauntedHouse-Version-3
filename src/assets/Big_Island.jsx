@@ -11,7 +11,7 @@ import * as THREE from 'three'
 
 export default function BigIsland(props) {
   const { nodes, materials } = useGLTF(
-    'https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb'
+    'models/Big_Island-transformed.glb'
   )
 
   materials.Ground_Baked.envMapIntensity = 0.5
@@ -68,5 +68,5 @@ export default function BigIsland(props) {
 }
 
 useGLTF.preload(
-  'https://master--clinquant-malabi-6020aa.netlify.app/models/Big_Island-transformed.glb'
+  'models/Big_Island-transformed.glb'
 )
