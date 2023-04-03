@@ -8,13 +8,25 @@ import { Float, useGLTF } from '@react-three/drei'
 import Hand from './Hand'
 
 export default function Island(props) {
-  const { nodes, materials } = useGLTF('https://hauntedhouse2023.netlify.app/models/Island-transformed.glb')
+  const { nodes, materials } = useGLTF(
+    'https://hauntedhouse2023.netlify.app/models/Island-transformed.glb'
+  )
   return (
-    <Float>
+    <Float rotationIntensity={0.5} floatIntensity={2}>
       <group {...props} dispose={null}>
-        <group position={[-1.19, -6, 1.1]} rotation={[Math.PI, -0.31, Math.PI]} scale={0.61}>
-          <mesh geometry={nodes.Vert022.geometry} material={materials['Island_Baked.002']} />
-          <mesh geometry={nodes.Vert022_1.geometry} material={materials['Metal.004']} />
+        <group
+          position={[-1.19, -6, 1.1]}
+          rotation={[Math.PI, -0.31, Math.PI]}
+          scale={0.61}
+        >
+          <mesh
+            geometry={nodes.Vert022.geometry}
+            material={materials['Island_Baked.002']}
+          />
+          <mesh
+            geometry={nodes.Vert022_1.geometry}
+            material={materials['Metal.004']}
+          />
         </group>
       </group>
       <Hand position={[0, -1, 0]} />
@@ -22,4 +34,6 @@ export default function Island(props) {
   )
 }
 
-useGLTF.preload('https://hauntedhouse2023.netlify.app/public/models/Island-transformed.glb')
+useGLTF.preload(
+  'https://hauntedhouse2023.netlify.app/public/models/Island-transformed.glb'
+)

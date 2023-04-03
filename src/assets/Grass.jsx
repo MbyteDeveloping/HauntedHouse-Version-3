@@ -48,7 +48,6 @@ export function Grass({ children, strands = 15000, ...props }) {
           />
         </LayerMaterial>
       </instancedMesh>
-      <Flower ref={flowerRef} scale={1.005} />
       <group>
         <Sampler
           transform={({ position, normal, dummy: object }) => {

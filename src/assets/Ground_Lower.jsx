@@ -5,20 +5,27 @@ Command: npx gltfjsx@6.1.4 public/models/Ground_Lower.glb --transform
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { Grass } from './Grass'
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF('models/Ground_Lower-transformed.glb')
+export default function GroundLower(props) {
+  const { nodes, materials } = useGLTF(
+    'https://hauntedhouse2023.netlify.app/models/Ground_Lower-transformed.glb'
+  )
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Island_Baked.geometry}
-        material={materials.Material}
-        position={[-1.19, -5, 1.1]}
-        rotation={[Math.PI, -0.31, Math.PI]}
-        scale={0.61}
-      />
+      <Grass>
+        <mesh
+          geometry={nodes.Island_Baked.geometry}
+          material={materials.Material}
+          position={[-1.19, -5, 1.1]}
+          rotation={[Math.PI, -0.31, Math.PI]}
+          scale={0.61}
+        />
+      </Grass>
     </group>
   )
 }
 
-useGLTF.preload('models/Ground_Lower-transformed.glb')
+useGLTF.preload(
+  'https://hauntedhouse2023.netlify.app/models/Ground_Lower-transformed.glb'
+)

@@ -1,23 +1,17 @@
 import React, { useRef, useEffect } from 'react'
 import { Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import {
-  Gltf,
-  ScrollControls,
-  useScroll,
-  Sparkles,
-  Environment,
-} from '@react-three/drei'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+
+import { Sparkles, Environment, OrbitControls } from '@react-three/drei'
 import CameraRig from './assets/CameraRig.jsx'
+import AnimationWrapper from './animationwrapper.jsx'
+import Camera from './assets/Camera.jsx'
 
 import {
   EffectComposer,
   Bloom,
   Vignette,
-  BrightnessContrast,
-  HueSaturation,
   DepthOfField,
-  ChromaticAberration,
 } from '@react-three/postprocessing'
 import { BlendFunction } from 'postprocessing'
 import * as THREE from 'three'
@@ -38,7 +32,12 @@ export default function App() {
         alpha: false,
       }}
       shadows={false}
-      camera={{ position: [5, 5, 13], fov: 45, near: 2, far: 40 }}
+      camera={{
+        /*         position: [0, 10, 0], */
+        fov: 45,
+        near: 0.2,
+        far: 80,
+      }}
       dpr={[0.9, 1]}
     >
       <ambientLight intensity={0.5} />
@@ -55,6 +54,10 @@ export default function App() {
         </Suspense>
       </CameraRig>
 
+      <Camera></Camera>
+
+      {/*       <AnimationWrapper /> */}
+
       <Sparkles
         position={[-2, 1.5, 4]}
         count={10}
@@ -68,6 +71,38 @@ export default function App() {
         scale={1}
         size={2}
         speed={0.7}
+      />
+      <Sparkles
+        count={20}
+        scale={1}
+        size={6}
+        speed={0.6}
+        position={[2.5, 1.5, 4]}
+        color={'orange'}
+      />
+      <Sparkles
+        count={30}
+        scale={1}
+        size={5}
+        speed={0.6}
+        position={[-2, 1.5, 4]}
+        color={'orange'}
+      />
+      <Sparkles
+        count={15}
+        scale={1}
+        size={6}
+        speed={1}
+        position={[-3, -0.5, 3]}
+        color={'orange'}
+      />
+      <Sparkles
+        count={80}
+        scale={4}
+        size={6}
+        speed={1}
+        position={[-1, -4, 0]}
+        color={'orange'}
       />
 
       <EffectComposer>
@@ -95,17 +130,17 @@ export default function App() {
         />
       </EffectComposer>
       <Environment preset="forest" />
+      <Scene></Scene>
     </Canvas>
   )
 }
 
 function Scene() {
-  const bgColor = '#0b001c'
+  const bgColor = '#110038'
 
   return (
     <>
       <color attach="background" args={[bgColor]} />
-
       <directionalLight
         intensity={0.3}
         color="orange"

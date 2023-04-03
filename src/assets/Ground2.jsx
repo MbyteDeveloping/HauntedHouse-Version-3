@@ -7,12 +7,12 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { Grass } from './Grass'
 
-export default function round2(props) {
+export default function Ground2(props) {
   const { nodes, materials } = useGLTF(
     'https://hauntedhouse2023.netlify.app/models/Ground2-transformed.glb'
   )
   return (
-    <group {...props} dispose={null} scale={1.1}>
+    <group {...props} dispose={null} scale={1.2}>
       <Grass>
         <mesh
           geometry={nodes.Ground_Baked001.geometry}
