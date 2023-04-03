@@ -15,6 +15,7 @@ import {
 } from '@react-three/postprocessing'
 import { BlendFunction } from 'postprocessing'
 import * as THREE from 'three'
+import { ACESFilmicToneMapping } from 'three'
 
 import BigIsland from './assets/Big_Island.jsx'
 import SkeletonTree from './assets/Skeleton_Tree.jsx'
@@ -39,6 +40,7 @@ export default function App() {
         far: 80,
       }}
       dpr={[0.9, 1]}
+      colormanagement={ACESFilmicToneMapping}
     >
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -55,8 +57,7 @@ export default function App() {
       </CameraRig>
 
       <Camera></Camera>
-
-      {/*       <AnimationWrapper /> */}
+      {/*      <AnimationWrapper/> */}
 
       <Sparkles
         position={[-2, 1.5, 4]}
