@@ -33,12 +33,6 @@ export default function App() {
         alpha: false,
       }}
       shadows={false}
-      camera={{
-        /*         position: [0, 10, 0], */
-        fov: 45,
-        near: 0.2,
-        far: 80,
-      }}
       dpr={[0.9, 1]}
       colormanagement={ACESFilmicToneMapping}
     >
