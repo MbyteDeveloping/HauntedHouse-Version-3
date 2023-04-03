@@ -68,22 +68,6 @@ export default function App() {
         speed={0.7}
       />
       <Sparkles
-        count={20}
-        scale={1}
-        size={6}
-        speed={0.6}
-        position={[2.5, 1.5, 4]}
-        color={'orange'}
-      />
-      <Sparkles
-        count={30}
-        scale={1}
-        size={5}
-        speed={0.6}
-        position={[-2, 1.5, 4]}
-        color={'orange'}
-      />
-      <Sparkles
         count={15}
         scale={1}
         size={6}
@@ -93,10 +77,34 @@ export default function App() {
       />
       <Sparkles
         count={80}
-        scale={4}
+        scale={6}
         size={6}
         speed={1}
         position={[-1, -4, 0]}
+        color={'orange'}
+      />
+      <Sparkles
+        count={30}
+        scale={1}
+        size={10}
+        speed={1}
+        position={[3.549, 0, -3.18]}
+        color={'orange'}
+      />
+      <Sparkles
+        count={8}
+        scale={5}
+        size={10}
+        speed={1}
+        position={[0, 3, 3.18]}
+        color={'green'}
+      />
+      <Sparkles
+        count={30}
+        scale={4}
+        size={10}
+        speed={1}
+        position={[-1.5, -8.5, -5.4]}
         color={'orange'}
       />
 
