@@ -16,7 +16,7 @@ export default function Camera(props) {
     var Cont = { val: 0 },
       NewVal = 100
     const animationDuration = animations[0].duration
-    const frame = animationDuration / 800
+    const frame = animationDuration / 1200
     // if it runs until the last frame, it will restart from frame 1, didn't found a solution for this yet.
     const max = animationDuration - frame
     const clip = anim.actions[anim.names]
