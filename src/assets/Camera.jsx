@@ -39,7 +39,7 @@ export default function Camera(props) {
     let tl = gsap.timeline({
       ease: 'none',
       scrollTrigger: {
-        trigger: '.main-wrapper',
+        trigger: '.section-wrapper',
         start: 'top top',
         end: 'bottom bottom',
         pin: false,
@@ -76,8 +76,101 @@ export default function Camera(props) {
         },
         0
       )
-      .to('#content-1', { opacity: 0, duration: 1, ease: 'Power2.Out' }, 0)
-      .to('#content-2', { opacity: 1, duration: 0.8, ease: 'Power2.Out' }, 1)
+
+    gsap.to('#content-1', {
+      scrollTrigger: {
+        trigger: '#section-1',
+        start: '100% 50%',
+        endtrigger: '#section-1',
+        end: '0% 50%',
+        toggleActions: 'play play reverse reverse',
+        markers: true,
+      },
+      opacity: 0,
+      zIndex: 0,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    gsap.to('#content-2', {
+      scrollTrigger: {
+        trigger: '#section-2',
+        start: '12% 20%',
+        toggleActions: 'restart reverse restart reverse',
+        markers: true,
+      },
+      opacity: 1,
+      zIndex: 10,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    gsap.to('#content-3', {
+      scrollTrigger: {
+        trigger: '#section-3',
+        start: '12% 20%',
+        toggleActions: 'restart reverse restart reverse',
+        markers: true,
+      },
+      opacity: 1,
+      zIndex: 10,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    gsap.to('#content-4', {
+      scrollTrigger: {
+        trigger: '#section-4',
+        start: '12% 20%',
+        toggleActions: 'restart reverse restart reverse',
+        markers: true,
+      },
+      opacity: 1,
+      zIndex: 10,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    gsap.to('#content-5', {
+      scrollTrigger: {
+        trigger: '#section-5',
+        start: '12% 20%',
+        toggleActions: 'restart reverse restart reverse',
+        markers: true,
+      },
+      opacity: 1,
+      zIndex: 10,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    gsap.to('#content-3', {
+      scrollTrigger: {
+        trigger: '#section-6',
+        start: '12% 20%',
+        toggleActions: 'restart reverse restart reverse',
+        markers: true,
+      },
+      opacity: 1,
+      zIndex: 10,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    gsap.to('#content-7', {
+      scrollTrigger: {
+        trigger: '#section-7',
+        start: '12% 20%',
+        toggleActions: 'restart reverse restart reverse',
+        markers: true,
+      },
+      opacity: 1,
+      zIndex: 10,
+      duration: 0.4,
+      ease: 'Power2.Out',
+    })
+
+    /*       .to('#content-2', { opacity: 1, duration: 0.8, ease: 'Power2.Out' }, 1)
       .to('#content-2', { opacity: 0, duration: 0.2 }, 1.8)
       .to('#content-3', { opacity: 1, duration: 0.8, ease: 'Power2.Out' }, 2)
       .to('#content-3', { opacity: 0, duration: 0.2 }, 2.8)
@@ -88,9 +181,7 @@ export default function Camera(props) {
       .to('#content-6', { opacity: 1, duration: 0.8, ease: 'Power2.Out' }, 5)
       .to('#content-6', { opacity: 0, duration: 0.2 }, 5.8)
       .to('#content-7', { opacity: 1, duration: 0.8, ease: 'Power2.Out' }, 6)
-      .to('#content-7', { opacity: 0, duration: 0.2 }, 6.8)
-      .to('#content-8', { opacity: 1, duration: 0.8, ease: 'Power2.Out' }, 7)
-      .to('#content-8', { opacity: 0, duration: 0.2 }, 7.8)
+      .to('#content-7', { opacity: 0, duration: 0.2 }, 6.8) */
   })
 
   return (
