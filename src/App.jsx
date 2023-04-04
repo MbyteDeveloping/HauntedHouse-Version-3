@@ -1,11 +1,13 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Suspense } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
+import { gsap } from 'gsap'
 
 import { Sparkles, Environment, OrbitControls } from '@react-three/drei'
 import CameraRig from './assets/CameraRig.jsx'
-import AnimationWrapper from './animationwrapper.jsx'
 import Camera from './assets/Camera.jsx'
+
+import animations from './animations.jsx'
 
 import {
   EffectComposer,
@@ -25,6 +27,47 @@ import Ground from './assets/Ground'
 import Ground2 from './assets/Ground2.jsx'
 
 export default function App() {
+  animations()
+  const [showCamera, setShowCamera] = useState(true)
+
+  const handleOrbitButtonClick = () => {
+    setShowCamera(false)
+  }
+
+  const handleUnOrbitButtonClick = () => {
+    setShowCamera(true)
+  }
+
+  function orbitButtonClick() {
+    gsap.to('#root', { zIndex: 30 })
+    gsap.to('#progress-bar-wrap', {
+      opacity: 0,
+      display: 'none',
+      duration: 0.5,
+    })
+    gsap.to('#exit-wrapper', { display: 'block', zIndex: 30 })
+    handleOrbitButtonClick()
+    document.body.style.overflow = 'hidden'
+  }
+
+  function unOrbitButtonClick() {
+    gsap.to('#root', { zIndex: 1 })
+    gsap.to('#progress-bar-wrap', {
+      opacity: 1,
+      display: 'block',
+      duration: 0.5,
+    })
+    gsap.to('#exit-wrapper', { display: 'none', zIndex: 0 })
+    handleUnOrbitButtonClick()
+    document.body.style.overflow = 'auto'
+  }
+
+  let orbitButton = document.getElementById('orbit-button')
+  orbitButton.addEventListener('click', orbitButtonClick)
+
+  let unOrbitButton = document.getElementById('un-orbit-button')
+  unOrbitButton.addEventListener('click', unOrbitButtonClick)
+
   return (
     <Canvas
       gl={{
@@ -32,6 +75,7 @@ export default function App() {
         toneMapping: THREE.LinearToneMapping,
         alpha: false,
       }}
+      camera={{ position: [5, 5, 13], fov: 45, near: 2, far: 40 }}
       shadows={false}
       dpr={[0.9, 1]}
       colormanagement={ACESFilmicToneMapping}
@@ -50,8 +94,8 @@ export default function App() {
         </Suspense>
       </CameraRig>
 
-      <Camera></Camera>
-      {/*      <AnimationWrapper/> */}
+      {showCamera && <Camera />}
+      {!showCamera && <OrbitControls />}
 
       <Sparkles
         position={[-2, 1.5, 4]}

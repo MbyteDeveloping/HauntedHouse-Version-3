@@ -5,36 +5,10 @@ gsap.registerPlugin(ScrollTrigger)
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, PerspectiveCamera, useAnimations } from '@react-three/drei'
 
-export default function Camera(props) {
-  const group = useRef()
-  const { animations } = useGLTF(
-    'https://hauntedhouse2023.netlify.app/models/Camera.glb'
-  )
-  const anim = useAnimations(animations, group)
-
+export default function animations(props) {
   useEffect(() => {
     var Cont = { val: 0 },
       NewVal = 100
-    const animationDuration = animations[0].duration
-    const frame = animationDuration / 1200
-    // if it runs until the last frame, it will restart from frame 1, didn't found a solution for this yet.
-    const max = animationDuration - frame
-    const clip = anim.actions[anim.names]
-    clip.play()
-    const mixer = clip.getMixer()
-    let proxy = {
-      get time() {
-        return mixer.time
-      },
-      set time(value) {
-        clip.paused = false
-        mixer.setTime(value)
-        clip.paused = true
-      },
-    }
-
-    // for some reason must be set to 0 otherwise the clip will not be properly paused.
-    proxy.time = 1
 
     let tl = gsap.timeline({
       ease: 'none',
@@ -50,32 +24,19 @@ export default function Camera(props) {
       },
     })
 
-    tl.set(proxy, { time: 1 })
-
-    tl.to(
-      proxy,
+    tl.to('.progress-bar', { width: '100%', duration: 7, ease: 'none' }, 0).to(
+      Cont,
       {
-        time: max,
         duration: 7,
         ease: 'none',
+        val: NewVal,
+        roundProps: 'val',
+        onUpdate: function () {
+          document.querySelector('.progress-number').innerHTML = Cont.val + '%'
+        },
       },
       0
     )
-    /*       .to('.progress-bar', { width: '100%', duration: 7, ease: 'none' }, 0)
-      .to(
-        Cont,
-        {
-          duration: 7,
-          ease: 'none',
-          val: NewVal,
-          roundProps: 'val',
-          onUpdate: function () {
-            document.querySelector('.progress-number').innerHTML =
-              Cont.val + '%'
-          },
-        },
-        0
-      )
 
     gsap.to('#content-1', {
       scrollTrigger: {
@@ -194,24 +155,6 @@ export default function Camera(props) {
       zIndex: 10,
       duration: 0.8,
       ease: 'Power2.Out',
-    }) */
+    })
   })
-
-  return (
-    <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
-        <PerspectiveCamera
-          name="Camera"
-          makeDefault={true}
-          far={1000}
-          near={0.1}
-          fov={30}
-          position={[9.86, 6.94, 26.72]}
-          rotation={[-0.26, 0.55, 0.11]}
-        />
-      </group>
-    </group>
-  )
 }
-
-useGLTF.preload('https://hauntedhouse2023.netlify.app/models/Camera.glb')

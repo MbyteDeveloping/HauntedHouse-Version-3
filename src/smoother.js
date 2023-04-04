@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger)
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 gsap.registerPlugin(ScrollSmoother)
 
-export default function Animations() {
+export default function Smoother() {
   let smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
