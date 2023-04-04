@@ -35,5 +35,5 @@ export default function Island(props) {
 }
 
 useGLTF.preload(
-  'https://hauntedhouse2023.netlify.app/public/models/Island-transformed.glb'
+  'https://hauntedhouse2023.netlify.app/models/Island-transformed.glb'
 )

@@ -75,7 +75,7 @@ export default function App() {
         toneMapping: THREE.LinearToneMapping,
         alpha: false,
       }}
-      camera={{ position: [5, 5, 13], fov: 45, near: 2, far: 40 }}
+      camera={{ position: [5, 5, 13], fov: 45, near: 0.01, far: 40 }}
       shadows={false}
       dpr={[0.9, 1]}
       colormanagement={ACESFilmicToneMapping}
