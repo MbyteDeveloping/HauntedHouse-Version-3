@@ -15,7 +15,6 @@ import {
   Vignette,
   DepthOfField,
 } from '@react-three/postprocessing'
-import { BlendFunction } from 'postprocessing'
 import * as THREE from 'three'
 import { ACESFilmicToneMapping } from 'three'
 
@@ -166,7 +165,6 @@ export default function App() {
           luminanceThreshold={0.9}
           intensity={1.6}
           mipmapBlur
-          blendFunction={BlendFunction.LIGHTEN}
         />
         <Vignette darkness={0.5} offset={0.6} />
 
