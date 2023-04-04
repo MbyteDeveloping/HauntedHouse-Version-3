@@ -171,12 +171,12 @@ export default function App() {
         <Vignette darkness={0.5} offset={0.6} />
 
         {/* CAN AFECT THE PERFORMANCE */}
-{/*         <DepthOfField
+        <DepthOfField
           focalLength={0.45}
           bokehScale={3.5}
           focusDistance={0.01}
           target={[0, 0, 4.9]}
-        /> */}
+        />
       </EffectComposer>
       <Environment preset="forest" />
       <Scene></Scene>
