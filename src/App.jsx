@@ -84,8 +84,14 @@ export default function App() {
       <CameraRig>
         <Suspense>
           <BigIsland />
+        </Suspense>
+        <Suspense>
           <SkeletonTree />
+        </Suspense>
+        <Suspense>
           <Island />
+        </Suspense>
+        <Suspense>
           <SmallIsland />
         </Suspense>
       </CameraRig>
