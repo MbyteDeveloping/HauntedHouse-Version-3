@@ -23,8 +23,6 @@ import BigIsland from './assets/Big_Island.jsx'
 import SkeletonTree from './assets/Skeleton_Tree.jsx'
 import Island from './assets/Island.jsx'
 import SmallIsland from './assets/Small_Island.jsx'
-import Ground from './assets/Ground'
-import Ground2 from './assets/Ground2.jsx'
 
 export default function App() {
   animations()
@@ -89,8 +87,6 @@ export default function App() {
           <SkeletonTree />
           <Island />
           <SmallIsland />
-          <Ground />
-          <Ground2 />
         </Suspense>
       </CameraRig>
 
