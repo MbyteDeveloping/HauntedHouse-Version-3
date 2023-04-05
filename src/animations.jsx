@@ -107,16 +107,16 @@ export default function animations() {
         ease: 'Power1.Out',
       })
       .to('#nav-button', {
-        marginLeft: '0.7rem',
-        marginRight: '0.7rem',
+        paddingLeft: '0.7rem',
+        paddingRight: '0.7rem',
         duration: 0.4,
         ease: 'Power1.Out',
       })
       .to(
         '#cart-icon',
         {
-          width: '1.7rem',
-          height: '1.7rem',
+          width: '1.8rem',
+          height: '1.8rem',
           ease: 'Power1.Out',
         },
         '-=0.4'
