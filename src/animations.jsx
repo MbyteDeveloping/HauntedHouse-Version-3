@@ -36,20 +36,32 @@ export default function animations(props) {
       },
       0
     )
-      .to('.progress-bar', { width: '100%', duration: 7, ease: 'none' }, 0)
-      .gsap.to('#content-1', {
-        scrollTrigger: {
-          trigger: '#section-1',
-          start: '100% 80%',
-          endtrigger: '#section-1',
-          end: '0% 50%',
-          toggleActions: 'restart restart reverse reverse',
-        },
-        opacity: 0,
-        zIndex: 0,
-        duration: 0.8,
-        ease: 'Power2.Out',
-      })
+
+    gsap.to('.progress-bar', {
+      scrollTrigger: {
+        trigger: '.section-wrapper',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+      },
+      width: '100%',
+      duration: 7,
+      ease: 'none',
+    })
+
+    gsap.to('#content-1', {
+      scrollTrigger: {
+        trigger: '#section-1',
+        start: '100% 80%',
+        endtrigger: '#section-1',
+        end: '0% 50%',
+        toggleActions: 'restart restart reverse reverse',
+      },
+      opacity: 0,
+      zIndex: 0,
+      duration: 0.8,
+      ease: 'Power2.Out',
+    })
 
     gsap.to('#content-2', {
       scrollTrigger: {
