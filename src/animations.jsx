@@ -87,21 +87,13 @@ export default function animations() {
     })
   }
 
-  navDissappear
-    .to('#nav-button-text', {
-      opacity: 0,
-      width: 0,
-      display: 'none',
-      duration: 0.4,
-      ease: 'Power1.Out',
-    })
-
-    .to('#nav-button', {
-      marginLeft: '0.7rem',
-      marginRight: '0.7rem',
-      duration: 0.4,
-      ease: 'Power1.Out',
-    })
+  navDissappear.to('#nav-button-text', {
+    opacity: 0,
+    width: 0,
+    display: 'none',
+    duration: 0.4,
+    ease: 'Power1.Out',
+  })
 
   gsap.to('#content-3', {
     scrollTrigger: {
