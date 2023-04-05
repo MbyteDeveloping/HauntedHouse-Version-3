@@ -101,7 +101,16 @@ export default function App() {
       </CameraRig>
 
       {showCamera && <Camera />}
-      {!showCamera && <OrbitControls />}
+      {!showCamera && (
+        <OrbitControls
+          minDistance={3}
+          maxDistance={40}
+          maxAzimuthAngle={Math.PI / 3} // 120 degrees to the left and right
+          minAzimuthAngle={-Math.PI / 3}
+          maxPolarAngle={Math.PI / 3} // 120 degrees to the top and bottom
+          minPolarAngle={-Math.PI / 3}
+        />
+      )}
 
       <Sparkles
         position={[-2, 1.5, 4]}
