@@ -107,8 +107,8 @@ export default function animations() {
         ease: 'Power1.Out',
       })
       .to('#nav-button', {
-        paddingLeft: '0.7rem',
-        paddingRight: '0.7rem',
+        paddingLeft: '0.9rem',
+        paddingRight: '0.9rem',
         duration: 0.4,
         ease: 'Power1.Out',
       })
