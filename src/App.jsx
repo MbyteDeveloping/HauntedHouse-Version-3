@@ -102,7 +102,7 @@ export default function App() {
         <OrbitControls
           minDistance={15}
           maxDistance={40}
-          maxPolarAngle={Math.PI} // 180 degrees downwards
+          maxPolarAngle={Math.PI / 2}
           minPolarAngle={0}
         />
       )}
