@@ -34,10 +34,6 @@ export default function animations(props) {
       },
       0
     )
-const gsap = window.gsap
-const ScrollTrigger = window.ScrollTrigger
-
-gsap.registerPlugin(ScrollTrigger)
 
     gsap.to('.progress-bar', {
       scrollTrigger: {
