@@ -80,20 +80,48 @@ export default function animations() {
   })
 
   if (window.innerWidth > 992) {
-    navDissappear.to('.nav-link', {
-      opacity: 0,
-      duration: 0.7,
-      ease: 'Power2.Out',
-    })
-    .to('#nav-button-text', {
-      opacity: 0,
-      width: 0,
-      display: 'none',
-      duration: 0.4,
-      ease: 'Power1.Out',
-    })
+    navDissappear
+      .to('.nav-link', {
+        opacity: 0,
+        duration: 0.7,
+        ease: 'Power2.Out',
+      })
+      .to('#nav-button-overlay', {
+        opacity: 0,
+        width: 0,
+        display: 'none',
+        duration: 0.1,
+      })
+      .to('#nav-button-text', {
+        opacity: 0,
+        width: 0,
+        display: 'none',
+        duration: 0.4,
+        ease: 'Power1.Out',
+      })
+      .to('#nav-button-text', {
+        opacity: 0,
+        width: 0,
+        display: 'none',
+        duration: 0.4,
+        ease: 'Power1.Out',
+      })
+      .to('#nav-button', {
+        marginLeft: '0.7rem',
+        marginRight: '0.7rem',
+        duration: 0.4,
+        ease: 'Power1.Out',
+      })
+      .to(
+        '#cart-icon',
+        {
+          width: '1.7rem',
+          height: '1.7rem',
+          ease: 'Power1.Out',
+        },
+        '-=0.4'
+      )
   }
-
 
   gsap.to('#content-3', {
     scrollTrigger: {
