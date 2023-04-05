@@ -2,8 +2,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-import React, { useEffect, useRef } from 'react'
-import { useGLTF, PerspectiveCamera, useAnimations } from '@react-three/drei'
+import { useEffect } from 'react'
 
 export default function animations(props) {
   useEffect(() => {
@@ -24,7 +23,7 @@ export default function animations(props) {
       },
     })
 
-    tl.to('.progress-bar', { width: '100%', duration: 7, ease: 'none' }, 0).to(
+    tl.to(
       Cont,
       {
         duration: 7,
@@ -37,20 +36,20 @@ export default function animations(props) {
       },
       0
     )
-
-    gsap.to('#content-1', {
-      scrollTrigger: {
-        trigger: '#section-1',
-        start: '100% 80%',
-        endtrigger: '#section-1',
-        end: '0% 50%',
-        toggleActions: 'restart restart reverse reverse',
-      },
-      opacity: 0,
-      zIndex: 0,
-      duration: 0.8,
-      ease: 'Power2.Out',
-    })
+      .to('.progress-bar', { width: '100%', duration: 7, ease: 'none' }, 0)
+      .gsap.to('#content-1', {
+        scrollTrigger: {
+          trigger: '#section-1',
+          start: '100% 80%',
+          endtrigger: '#section-1',
+          end: '0% 50%',
+          toggleActions: 'restart restart reverse reverse',
+        },
+        opacity: 0,
+        zIndex: 0,
+        duration: 0.8,
+        ease: 'Power2.Out',
+      })
 
     gsap.to('#content-2', {
       scrollTrigger: {
