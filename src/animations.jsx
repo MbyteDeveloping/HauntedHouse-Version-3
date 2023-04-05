@@ -69,6 +69,7 @@ export default function animations() {
     duration: 0.8,
     ease: 'Power2.Out',
   })
+
   let navDissappear = gsap.timeline({
     scrollTrigger: {
       trigger: '#section-2',
@@ -77,16 +78,27 @@ export default function animations() {
       toggleActions: 'restart none none reverse',
     },
   })
-  navDissappear
-    .to('.nav-link', {
+
+  if (window.innerWidth > 992) {
+    navDissappear.to('.nav-link', {
       opacity: 0,
       duration: 0.7,
       ease: 'Power2.Out',
     })
+  }
+
+  navDissappear
     .to('#nav-button-text', {
       opacity: 0,
       width: 0,
       display: 'none',
+      duration: 0.4,
+      ease: 'Power1.Out',
+    })
+
+    .to('#nav-button', {
+      marginLeft: '2.6rem',
+      marginRight: '2.6rem',
       duration: 0.4,
       ease: 'Power1.Out',
     })
