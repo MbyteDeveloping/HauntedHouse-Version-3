@@ -60,7 +60,12 @@ export default function App() {
       opacity: 1,
       zIndex: 40,
       duration: 0.5,
-    }).to('#exit-wrapper', { opacity: 0, zIndex: 0, display: 'none' duration: 0.5 })
+    }).to('#exit-wrapper', {
+      opacity: 0,
+      zIndex: 0,
+      display: 'none',
+      duration: 0.5,
+    })
     handleUnOrbitButtonClick()
   }
 
@@ -103,7 +108,7 @@ export default function App() {
       {showCamera && <Camera />}
       {!showCamera && (
         <OrbitControls
-          minDistance={3}
+          minDistance={10}
           maxDistance={40}
           maxAzimuthAngle={Math.PI / 3} // 120 degrees to the left and right
           minAzimuthAngle={-Math.PI / 3}
