@@ -39,24 +39,24 @@ export default function App() {
     gsap.to('#root', { zIndex: 30 })
     gsap.to('#progress-bar-wrap', {
       opacity: 0,
-      display: 'none',
+      zIndex: 0,
       duration: 0.5,
     })
     gsap.to('#exit-wrapper', { display: 'block', zIndex: 30 })
     handleOrbitButtonClick()
-
+    document.body.style.overflow = 'hidden'
   }
 
   function unOrbitButtonClick() {
     gsap.to('#root', { zIndex: 1 })
     gsap.to('#progress-bar-wrap', {
       opacity: 1,
-      display: 'block',
+      zIndex: 5,
       duration: 0.5,
     })
     gsap.to('#exit-wrapper', { display: 'none', zIndex: 0 })
     handleUnOrbitButtonClick()
-
+    document.body.style.overflow = 'auto'
   }
 
   let orbitButton = document.getElementById('orbit-button')
