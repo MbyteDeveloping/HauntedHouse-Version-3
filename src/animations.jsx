@@ -97,8 +97,8 @@ export default function animations() {
     })
 
     .to('#nav-button', {
-      marginLeft: '2.6rem',
-      marginRight: '2.6rem',
+      marginLeft: '0.7rem',
+      marginRight: '0.7rem',
       duration: 0.4,
       ease: 'Power1.Out',
     })
