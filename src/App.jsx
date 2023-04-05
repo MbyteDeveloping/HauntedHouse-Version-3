@@ -39,6 +39,11 @@ export default function App() {
       zIndex: 0,
       duration: 0.5,
     })
+    gsap.to('#nav-link-wrapper', {
+      opacity: 0,
+      zIndex: 0,
+      duration: 0.5,
+    })
     gsap.to('#exit-wrapper', { display: 'block', zIndex: 30 })
     handleOrbitButtonClick()
     document.body.style.overflow = 'hidden'
@@ -49,6 +54,11 @@ export default function App() {
     gsap.to('#progress-bar-wrap', {
       opacity: 1,
       zIndex: 5,
+      duration: 0.5,
+    })
+    gsap.to('#nav-link-wrapper', {
+      opacity: 1,
+      zIndex: 40,
       duration: 0.5,
     })
     gsap.to('#exit-wrapper', { display: 'none', zIndex: 0 })
