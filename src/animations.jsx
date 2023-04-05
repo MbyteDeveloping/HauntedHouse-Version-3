@@ -17,9 +17,6 @@ export default function animations(props) {
         end: 'bottom bottom',
         pin: false,
         scrub: 1,
-        onUpdate: function () {
-          /*           console.log(proxy) */
-        },
       },
     })
 
@@ -45,8 +42,6 @@ export default function animations(props) {
         scrub: 1,
       },
       width: '100%',
-      duration: 7,
-      ease: 'none',
     })
 
     gsap.to('#content-1', {
