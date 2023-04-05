@@ -115,8 +115,8 @@ export default function animations() {
       .to(
         '#cart-icon',
         {
-          width: '1.8rem',
-          height: '1.8rem',
+          width: '1.1rem',
+          height: '1.1rem',
           ease: 'Power1.Out',
         },
         '-=0.4'
