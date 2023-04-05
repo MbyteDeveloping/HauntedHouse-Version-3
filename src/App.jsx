@@ -46,7 +46,6 @@ export default function App() {
     })
     gsap.to('#exit-wrapper', { display: 'block', zIndex: 30 })
     handleOrbitButtonClick()
-    document.body.style.overflow = 'hidden'
   }
 
   function unOrbitButtonClick() {
@@ -63,7 +62,6 @@ export default function App() {
     })
     gsap.to('#exit-wrapper', { display: 'none', zIndex: 0 })
     handleUnOrbitButtonClick()
-    document.body.style.overflow = 'auto'
   }
 
   let orbitButton = document.getElementById('orbit-button')

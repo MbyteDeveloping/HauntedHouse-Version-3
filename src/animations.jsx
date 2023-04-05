@@ -85,15 +85,15 @@ export default function animations() {
       duration: 0.7,
       ease: 'Power2.Out',
     })
+    .to('#nav-button-text', {
+      opacity: 0,
+      width: 0,
+      display: 'none',
+      duration: 0.4,
+      ease: 'Power1.Out',
+    })
   }
 
-  navDissappear.to('#nav-button-text', {
-    opacity: 0,
-    width: 0,
-    display: 'none',
-    duration: 0.4,
-    ease: 'Power1.Out',
-  })
 
   gsap.to('#content-3', {
     scrollTrigger: {
