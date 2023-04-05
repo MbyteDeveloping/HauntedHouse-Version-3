@@ -32,6 +32,13 @@ export default function App() {
     setShowCamera(true)
   }
 
+  let tl = gsap.timeline({ paused: true })
+  tl.to('#nav-link-wrapper', {
+    opacity: 0,
+    zIndex: 0,
+    duration: 0.5,
+  }).to('#exit-wrapper', { opacity: 1, zIndex: 30, display: 'block' })
+
   function orbitButtonClick() {
     gsap.to('#root', { zIndex: 30 })
     gsap.to('#progress-bar-wrap', {
@@ -39,12 +46,7 @@ export default function App() {
       zIndex: 0,
       duration: 0.5,
     })
-    let tl = gsap.timeline({})
-    tl.to('#nav-link-wrapper', {
-      opacity: 0,
-      zIndex: 0,
-      duration: 0.5,
-    }).to('#exit-wrapper', { opacity: 1, zIndex: 30, display: 'block' })
+    tl.play()
     handleOrbitButtonClick()
   }
 
@@ -55,17 +57,7 @@ export default function App() {
       zIndex: 5,
       duration: 0.5,
     })
-    let tl = gsap.timeline({})
-    tl.to('#nav-link-wrapper', {
-      opacity: 1,
-      zIndex: 40,
-      duration: 0.5,
-    }).to('#exit-wrapper', {
-      opacity: 0,
-      zIndex: 0,
-      display: 'none',
-      duration: 0.5,
-    })
+    tl.reverse()
     handleUnOrbitButtonClick()
   }
 
@@ -108,12 +100,10 @@ export default function App() {
       {showCamera && <Camera />}
       {!showCamera && (
         <OrbitControls
-          minDistance={10}
+          minDistance={15}
           maxDistance={40}
-          maxAzimuthAngle={Math.PI / 3} // 120 degrees to the left and right
-          minAzimuthAngle={-Math.PI / 3}
-          maxPolarAngle={Math.PI / 3} // 120 degrees to the top and bottom
-          minPolarAngle={-Math.PI / 3}
+          maxPolarAngle={Math.PI} // 180 degrees downwards
+          minPolarAngle={0}
         />
       )}
 
