@@ -94,12 +94,6 @@ export default function animations(props) {
         duration: 0.4,
         ease: 'Power1.Out',
       })
-      .to('#nav-button', {
-        width: '3rem',
-        duration: 0.7,
-        delay: 0.6,
-        ease: 'Power1.Out',
-      })
 
     gsap.to('#content-3', {
       scrollTrigger: {
