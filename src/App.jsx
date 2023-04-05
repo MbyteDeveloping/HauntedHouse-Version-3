@@ -44,7 +44,7 @@ export default function App() {
       opacity: 0,
       zIndex: 0,
       duration: 0.5,
-    }).to('#exit-wrapper', { opacity: 1, zIndex: 30 })
+    }).to('#exit-wrapper', { opacity: 1, zIndex: 30, display: 'block' })
     handleOrbitButtonClick()
   }
 
@@ -60,7 +60,7 @@ export default function App() {
       opacity: 1,
       zIndex: 40,
       duration: 0.5,
-    }).to('#exit-wrapper', { opacity: 0, zIndex: 0, duration: 0.5 })
+    }).to('#exit-wrapper', { opacity: 0, zIndex: 0, display: 'none' duration: 0.5 })
     handleUnOrbitButtonClick()
   }
 
