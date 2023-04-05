@@ -36,9 +36,10 @@ export default function animations(props) {
 
     gsap.to('.progress-bar', {
       scrollTrigger: {
-        trigger: '.section-wrapper',
+        trigger: '#section-1',
         start: 'top top',
-        end: 'bottom bottom',
+        endtrigger: '#section-7',
+        end: 'bottom bottom%',
         scrub: 1,
       },
       width: '100%',
