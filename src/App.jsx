@@ -39,12 +39,12 @@ export default function App() {
       zIndex: 0,
       duration: 0.5,
     })
-    gsap.to('#nav-link-wrapper', {
+    let tl = gsap.timeline({})
+    tl.to('#nav-link-wrapper', {
       opacity: 0,
       zIndex: 0,
       duration: 0.5,
-    })
-    gsap.to('#exit-wrapper', { display: 'block', zIndex: 30 })
+    }).to('#exit-wrapper', { opacity: 1, zIndex: 30 })
     handleOrbitButtonClick()
   }
 
@@ -55,12 +55,12 @@ export default function App() {
       zIndex: 5,
       duration: 0.5,
     })
-    gsap.to('#nav-link-wrapper', {
+    let tl = gsap.timeline({})
+    tl.to('#nav-link-wrapper', {
       opacity: 1,
       zIndex: 40,
       duration: 0.5,
-    })
-    gsap.to('#exit-wrapper', { display: 'none', zIndex: 0 })
+    }).to('#exit-wrapper', { opacity: 0, zIndex: 0, duration: 0.5 })
     handleUnOrbitButtonClick()
   }
 
