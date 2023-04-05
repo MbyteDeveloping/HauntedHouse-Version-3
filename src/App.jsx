@@ -100,7 +100,7 @@ export default function App() {
       {showCamera && <Camera />}
       {!showCamera && (
         <OrbitControls
-          minDistance={15}
+          minDistance={8}
           maxDistance={40}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={0}
