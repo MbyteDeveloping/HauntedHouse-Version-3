@@ -7,8 +7,6 @@ import { Sparkles, Environment, OrbitControls } from '@react-three/drei'
 import CameraRig from './assets/CameraRig.jsx'
 import Camera from './assets/Camera.jsx'
 
-import animations from './animations.jsx'
-
 import {
   EffectComposer,
   Bloom,
@@ -24,7 +22,6 @@ import Island from './assets/Island.jsx'
 import SmallIsland from './assets/Small_Island.jsx'
 
 export default function App() {
-  animations()
   const [showCamera, setShowCamera] = useState(true)
 
   const handleOrbitButtonClick = () => {

@@ -4,4 +4,7 @@ import App from './App'
 import Smoother from './smoother'
 Smoother()
 
+import animations from './animations'
+animations()
+
 createRoot(document.getElementById('root')).render(<App />)
