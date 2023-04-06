@@ -24,9 +24,9 @@ export default function BigIsland(props) {
     <Float rotationIntensity={0.2}>
       <group {...props} dispose={null}>
         <group scale={1.25}>
-          {/*           <Grass>
+          {           <Grass>
             <mesh geometry={nodes.Ground002.geometry} />
-          </Grass> */}
+          </Grass> }
           <mesh
             geometry={nodes.Ground002.geometry}
             material={materials.Ground_Baked}
