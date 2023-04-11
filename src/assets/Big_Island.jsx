@@ -51,17 +51,7 @@ export default function BigIsland(props) {
         {/* <Environment preset='night' /> */}
 
         <Clouds scale={3} position={[-4, -2, -8]} />
-{/*         <Float>
-          <Stars
-            radius={3}
-            depth={10}
-            count={2000}
-            factor={0.2}
-            saturation={1}
-            fade
-            speed={1}
-          />
-        </Float> */}
+
       </group>
     </Float>
   )
