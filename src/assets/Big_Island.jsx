@@ -6,7 +6,6 @@ Command: npx gltfjsx@6.1.4 public/models/Big_Island.glb --transform -R 3072
 import React, { useRef } from 'react'
 import { Float, useGLTF, Sparkles, Environment, Stars } from '@react-three/drei'
 import Clouds from './Clouds2'
-import { Grass } from './Grass'
 import * as THREE from 'three'
 
 export default function BigIsland(props) {
@@ -24,9 +23,7 @@ export default function BigIsland(props) {
     <Float rotationIntensity={0.2}>
       <group {...props} dispose={null}>
         <group scale={1.25}>
-          {           <Grass>
-            <mesh geometry={nodes.Ground002.geometry} />
-          </Grass> }
+          {<mesh geometry={nodes.Ground002.geometry} />}
           <mesh
             geometry={nodes.Ground002.geometry}
             material={materials.Ground_Baked}
@@ -51,7 +48,6 @@ export default function BigIsland(props) {
         {/* <Environment preset='night' /> */}
 
         <Clouds scale={3} position={[-4, -2, -8]} />
-
       </group>
     </Float>
   )
