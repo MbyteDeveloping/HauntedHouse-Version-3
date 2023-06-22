@@ -185,7 +185,7 @@ export default function App() {
           target={[0, 0, 4.9]}
         />
       </EffectComposer>
-      <Environment preset="forest" />
+      <Environment files="https://hauntedhouse2023.netlify.app/forest_slope_1k.hdr" />
       <Scene></Scene>
     </Canvas>
   )
